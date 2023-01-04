@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Queue</title>
+    <style>
+        .Styling {
+            margin: 0px;
+            margin-bottom: 20px;
+            padding: 1px;
+            width: auto;
+            height: 40px;
+            border: 5px ridge gray;
+            border-right: none;
+            border-left: none;
+        }
+
+        .queue_block {
+            width: 40px;
+            height: 28px;
+            padding-left: 6px;
+            padding-bottom: 0px;
+            padding-right: 6px;
+            padding-top: 12px;
+            margin: 0px;
+            text-align: center;
+            display: inline-block;
+            border-radius: 5px;
+            overflow: auto;
+        }
+
+        .input_block {
+            margin-top: 20px;
+            padding-top: 6px;
+            width: 200px;
+            height: 30px;
+            font-weight: 700;
+            font-size: large;
+            text-align: center;
+            border-radius: 23px;
+            border-bottom: 10px ridge aqua;
+            border-left: none;
+            border-right: none;
+            border-top: none;
+            background-color: rgb(185, 236, 204);
+        }
+
+        .bt {
+            width: 93.59px;
+            height: 40px;
+            border-radius: 100px;
+            font-size: 16px;
+            font-weight: 700;
+        }
+
+        .alert {
+            border: 1px solid rgb(185, 236, 204);
+            width: 286px;
+            height: 10px;
+            font-size: 26px;
+            font-weight: 700;
+        }
+
+        .queue_body {
+            border: 12px groove rgb(6, 153, 6);
+            width: 292px;
+            margin: auto;
+            height: auto;
+            padding: 10px;
+            padding-top: 25px;
+            background-color: rgb(185, 236, 204);
+            text-align: center;
+            overflow: auto;
+            word-wrap: break-word;
+        }
+
+        h1 {
+            border-bottom: 10px groove rgb(9, 255, 0);
+            width: 150px;
+            margin-top: 0px;
+            margin: auto;
+            text-align: center;
+            border-radius: 23px;
+        }
+
+        h2 {
+            margin-top: 11px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="queue_body">
+        <div class="header">
+            <h1>Queue</h1>
+            <br>
+            <h2>Enter Your Element<input type="text" class="input_block" id="element" value="" placeholder="Enter">
+            </h2>
+        </div>
+        <br>
+        <div class="Styling">
+            <p id="queue_block0" class="queue_block"></p>
+            <p id="queue_block1" class="queue_block"></p>
+            <p id="queue_block2" class="queue_block"></p>
+            <p id="queue_block3" class="queue_block"></p>
+            <p id="queue_block4" class="queue_block"></p>
+        </div>
+        <br>
+        <button class="bt " onclick="Enqueue()">Enqueue</button>
+        <button class="bt " onclick="Dequeue()">Dequeue</button>
+        <button class="bt " onclick="Display()">Display</button>
+        <br>
+        <br>
+        <p class="alert" id="alertbox"></p>
+        <br><br><br>
+    </div>
+    <script>
+        let a = ["", "", "", "", "", ""];
+        let rear = 0;
+        let front = 0;
+        let d = element.value;
+        function Enqueue() {
+            if (element.value == 0) {
+                document.getElementById("alertbox").innerHTML = "Please Enter Element";
+            }
+            else if (rear == 5) {
+                document.getElementById("alertbox").innerHTML = "Overflow ";
+            }
+            else {
+                document.getElementById("queue_block" + rear).style = "background-color: black; color : white;"; document.getElementById("queue_block" + rear).innerHTML = element.value;
+                document.getElementById("alertbox").innerHTML = "Element Entered";
+                a[rear] = element.value;
+                element.value = "";
+                rear++;
+            }
+        }
+        function Dequeue() {
+            if (rear == 0 || front == rear) {
+                document.getElementById("alertbox").innerHTML = "Underflow";
+            }
+            else {
+                document.getElementById("queue_block" + front).style = "   background-color: rgb(185, 236, 204);   ";
+                document.getElementById("queue_block" + front).innerHTML = "";
+                document.getElementById("alertbox").innerHTML = "Element Dequeue";
+                a[front] = "";
+                front++;
+            }
+        }
+        let y;
+        function Display() {
+            if (front == rear || rear == 0) {
+                document.getElementById("alertbox").innerHTML = "Queue is Empty";
+            }
+            else {
+                document.getElementById("alertbox").innerHTML = a[0] + "  " + a[1] + "  " + a[2] + "  " + a[3] + "  " + a[4];
+            }
+        }
+    </script>
+</body>
+
+</html>

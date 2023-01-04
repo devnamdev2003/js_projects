@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/x-icon"
+    href="https://th.bing.com/th/id/R.8461973a78270f44061cd65c5f692649?rik=93g0kLSS96bBsg&riu=http%3a%2f%2ficons.iconarchive.com%2ficons%2fpelfusion%2flong-shadow-media%2f512%2fCalculator-icon.png&ehk=Ig9%2bV6t6gCnYwhwm24zV%2b5QtVv4NZtobBxfHWHkjqbo%3d&risl=&pid=ImgRaw&r=0">
+  <title>Calculator 1</title>
+  <script src="script.js"></script>
+  <style>
+    .num_btn:focus {
+      outline: none;
+
+    }
+
+    table {
+      width: auto;
+      margin: auto;
+    }
+
+    .num_btn:hover {
+      cursor: pointer;
+    }
+
+    button {
+      width: 100%;
+      border: 0px;
+      padding: 15px;
+      font-size: large;
+      background-color: aliceblue;
+    }
+
+    table {
+      border-collapse: collapse;
+      margin: 0%;
+    }
+
+    td {
+      text-align: center;
+      border: 2px solid black;
+      background-color: aliceblue;
+    }
+
+    .no_outline:focus {
+      outline: none;
+    }
+
+    input {
+      font-size: large;
+      text-align: right;
+      padding-right: 10px;
+      background-color: aliceblue;
+    }
+
+    table {
+      position: absolute;
+    }
+  </style>
+</head>
+
+<body id="body_tag" onresize="size()" onload="size()">
+  <table id="tab_btn">
+    <tr>
+      <td colspan="5">
+        <div class="in" id="div_in">
+          <input id="numbers" class="no_outline" type="text" value="" placeholder="ENTER" required />
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <button class="num_btn" onclick='print("+")'>
+          +
+        </button>
+      </td>
+      <td>
+        <button class="num_btn" onclick='print("-")'>
+          -
+        </button>
+      </td>
+      <td>
+        <button class="num_btn" onclick='print("*")'>
+          *
+        </button>
+      </td>
+      <td>
+        <button class="num_btn" onclick='print("/")'>
+          /
+        </button>
+      </td>
+    </tr>
+    <tr id="f_row">
+      <td>
+        <button class="num_btn" onclick='document.getElementById("numbers").value=numbers.value+7; '>
+          7
+        </button>
+      </td>
+      <td>
+        <button class="num_btn" onclick='document.getElementById("numbers").value=numbers.value+8'>
+          8
+        </button>
+      </td>
+      <td>
+
+        <button class="num_btn" onclick='document.getElementById("numbers").value=numbers.value +9'>
+          9
+        </button>
+      </td>
+      <td rowspan="4">
+        <button class="num_btn" id="answer_btn" onclick='ans()' style="height: 210px;">
+          =
+        </button>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <button class="num_btn" onclick='document.getElementById("numbers").value=numbers.value+4'>
+          4
+        </button>
+      </td>
+      <td>
+        <button class="num_btn" onclick='document.getElementById("numbers").value=numbers.value +5'>
+          5
+        </button>
+      </td>
+      <td>
+        <button class="num_btn" onclick='document.getElementById("numbers").value=numbers.value+6'>
+          6
+        </button>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <button class="num_btn" onclick='document.getElementById("numbers").value=numbers.value +1'>
+          1
+        </button>
+      </td>
+      <td>
+        <button class="num_btn" onclick='document.getElementById("numbers").value=numbers.value+2'>
+          2
+        </button>
+      </td>
+      <td>
+        <button class="num_btn" onclick='document.getElementById("numbers").value=numbers.value +3'>
+          3
+        </button>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <button class="num_btn" onclick='document.getElementById("numbers").value= numbers.value+0'>
+          0
+        </button>
+      </td>
+      <td>
+        <button class="num_btn" onclick='document.getElementById("numbers").value= numbers.value+"."'>
+          .
+        </button>
+      </td>
+      <td>
+        <button class="num_btn" onclick="document.getElementById('numbers').value=''">
+          C
+        </button>
+      </td>
+    </tr>
+  </table>
+</body>
+
+</html>

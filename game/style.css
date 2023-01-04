@@ -1,0 +1,94 @@
+
+      * {
+            text-align: center;
+      }
+
+      .first_class {
+            font-weight: bolder;
+            text-align: center;
+            font-size: 20px;
+      }
+
+      .input_block {
+            margin-top: 20px;
+            padding-top: 6px;
+            width: 200px;
+            height: 30px;
+            font-weight: 700;
+            font-size: large;
+            text-align: center;
+            border-radius: 23px;
+            border-bottom: 10px ridge rgb(107, 236, 236);
+            border-left: none;
+            border-right: none;
+            border-top: none;
+            background-color: rgb(208, 241, 220);
+      }
+
+      #code {
+            display: inline-block;
+            width: 200px;
+            height: 40px;
+            padding-top: 10px;
+            margin: auto;
+            background-color: rgb(200, 245, 217);
+            text-align: center;
+            border: 1px solid rgb(12, 0, 0);
+            border-radius: 5px;
+      }
+
+      .code1 {
+            display: inline-block;
+            width: 100px;
+            background-color: rgb(200, 245, 217);
+            text-align: center;
+            overflow: hidden;
+            padding: 0px;
+            margin: 0px;
+            text-align: center;
+            height: 50px;
+            padding-top: 30px;
+            font-size: 25px;
+            border: 1px solid;
+      }
+
+      .players {
+            display: inline-block;
+            width: 200px;
+            height: 40px;
+            padding-top: 10px;
+            margin: 0px;
+            background-color: rgb(200, 245, 217);
+            text-align: center;
+            border: 1px solid rgb(12, 0, 0);
+            border-radius: 5px;
+            margin-bottom: 10px;
+      }
+
+      .area_class {
+            background-color: antiquewhite;
+            width: 1024px;
+            margin: auto;
+      }
+
+      .bt {
+            width: 150px;
+            border-radius: 9px;
+            height: 40px;
+            padding: 0px;
+            font-size: 20px;
+            font-weight: 700;
+            margin: 0px;
+      }
+
+      #alert {
+            margin: 10px;
+      }
+
+      .second_class {
+            display: none;
+            background-color: rgb(181, 253, 253);
+            text-align: center;
+            margin-top: 0%;
+
+      }

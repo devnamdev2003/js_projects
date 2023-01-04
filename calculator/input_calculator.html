@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculator 2</title>
+    <link rel="icon" type="image/x-icon" href="https://th.bing.com/th/id/R.8461973a78270f44061cd65c5f692649?rik=93g0kLSS96bBsg&riu=http%3a%2f%2ficons.iconarchive.com%2ficons%2fpelfusion%2flong-shadow-media%2f512%2fCalculator-icon.png&ehk=Ig9%2bV6t6gCnYwhwm24zV%2b5QtVv4NZtobBxfHWHkjqbo%3d&risl=&pid=ImgRaw&r=0">
+    <style>
+      div {
+        position: relative;
+        top: 10px;
+        width: 323px;
+        height: 330px;
+        margin: auto;
+        border: solid;
+        padding: 3px;
+        border-radius: 7px;
+        background-color: antiquewhite;
+      }
+      input {
+        border-radius: 7px;
+        text-align: center;
+        width: 299px;
+        border-radius: 4px;
+        margin: 5px;
+        padding: 5px;
+        font-size: 20px;
+        font-weight: bold;
+        background-color: #fff6c7;
+      }
+      h1 {
+        text-align: center;
+      }
+      button {
+        border-radius: 7px;
+        text-align: center;
+        width: 313px;
+        border-radius: 4px;
+        margin: 5px;
+        padding: 5px;
+        font-size: 20px;
+        font-weight: bold;
+        background-color: rgb(183, 255, 180);
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <h1>Simple Calculator</h1>
+      <input
+        type="text"
+        id="dev1"
+        value=""
+        placeholder="Enter Your First Number"
+      />
+      <br />
+      <input
+        type="text"
+        id="dev15"
+        value=""
+        placeholder="Enter Your Operation( +, -, *, / )"
+      />
+      <br />
+      <input
+        type="text"
+        id="dev16"
+        value=""
+        placeholder="Enter Your Second Number"
+      />
+      <br />
+      <button onclick="dev2()">=</button>
+      <br />
+      <input type="text" id="dev4" value="" placeholder="Your Answer is : " />
+    </div>
+    <script>
+      let a, b, c, d;
+      function dev2() {
+        a = Number(dev1.value);
+        c = dev15.value;
+        b = Number(dev16.value);
+        switch (c) {
+          case "+":
+            d = document.getElementById("dev4").innerHTML =
+              "Your Answer is : " + (a + b);
+            dev4.value = d;
+            break;
+          case "-":
+            d = document.getElementById("dev4").innerHTML =
+              "Your Answer is : " + (a - b);
+            dev4.value = d;
+            break;
+          case "*":
+            d = document.getElementById("dev4").innerHTML =
+              "Your Answer is : " + a * b;
+            dev4.value = d;
+            break;
+          case "/":
+            d = document.getElementById("dev4").innerHTML =
+              "Your Answer is : " + a / b;
+            dev4.value = d;
+            break;   
+          default:
+            if (c == "") {
+              d = document.getElementById("dev4").innerHTML =
+                " Please Enter Operation ";
+              dev4.value = d;
+            } else {
+              d = document.getElementById("dev4").innerHTML =
+                "Your Operation is not valid ";
+              dev4.value = d;
+            }
+            break;
+        }
+      }
+    </script>
+  </body>
+</html>

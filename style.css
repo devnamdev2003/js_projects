@@ -1,0 +1,162 @@
+@import url(https://fonts.googleapis.com/css?family=Lato);
+
+            body {
+
+                  background: #000;
+
+            }
+
+            div {
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                  background: #000;
+            }
+
+            .btn {
+                  --hue: 190;
+                  position: relative;
+                  padding: 1rem 3rem;
+                  font-size: 1rem;
+                  line-height: 1.5;
+                  color: white;
+                  text-decoration: none;
+                  text-transform: uppercase;
+                  background-color: hsl(var(--hue), 100%, 41%);
+                  overflow: hidden;
+                  cursor: pointer;
+                  user-select: none;
+                  white-space: nowrap;
+                  transition: 0.25s;
+            }
+
+            .btn:hover {
+                  background: hsl(var(--hue), 100%, 31%);
+            }
+
+            .btn-primary {
+                  --hue: 187;
+            }
+
+            .btn-ghost {
+                  color: hsl(var(--hue), 100%, 41%);
+                  background-color: transparent;
+                  /* border-color: hsl(var(--hue), 100%, 41%); */
+            }
+
+            .btn-ghost:hover {
+                  color: white;
+            }
+
+            .btn-shine {
+                  color: white;
+            }
+
+            .btn-shine::before {
+                  position: absolute;
+                  content: "";
+                  top: 0;
+                  left: 0;
+                  width: 100%;
+                  height: 100%;
+                  background: linear-gradient(120deg, transparent, hsla(var(--hue), 100%, 41%, 0.5), transparent);
+                  transform: translateX(-100%);
+                  transition: 0.6s;
+            }
+
+            .btn-shine:hover {
+                  background: transparent;
+                  box-shadow: 0 0 20px 10px hsla(var(--hue), 100%, 41%, 0.5);
+            }
+
+            .btn-shine:hover::before {
+                  transform: translateX(100%);
+            }
+
+            a {
+                  text-decoration: none;
+                  color: aliceblue;
+            }
+
+            li {
+                  margin-bottom: 20px;
+                  list-style: none;
+            }
+
+
+
+
+
+
+            .heading {
+                  margin: 0;
+                  padding: 0;
+                  width: 100%;
+                  display: flex;
+                  flex-direction: row;
+                  justify-content: center;
+                  align-items: center;
+                  background: #000;
+            }
+
+            .glow-on-hover {
+                  width: auto;
+                  padding: 30px;
+                  font-size: 20px;
+                  border: none;
+                  outline: none;
+                  color: #fff;
+                  background: #111;
+                  position: relative;
+                  z-index: 0;
+                  border-radius: 10px;
+            }
+
+            .glow-on-hover:before {
+                  content: '';
+                  background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+                  position: absolute;
+                  top: -2px;
+                  left: -2px;
+                  background-size: 400%;
+                  z-index: -1;
+                  filter: blur(5px);
+                  width: calc(100% + 4px);
+                  height: calc(100% + 4px);
+                  animation: glowing 20s linear infinite;
+                  opacity: 0;
+                  transition: opacity .3s ease-in-out;
+                  border-radius: 10px;
+            }
+
+
+
+            .glow-on-hover:before {
+                  opacity: 1;
+            }
+
+            .glow-on-hover:after {
+                  z-index: -1;
+                  content: '';
+                  position: absolute;
+                  width: 100%;
+                  height: 100%;
+                  background: #111;
+                  left: 0;
+                  top: 0;
+                  border-radius: 10px;
+            }
+
+            @keyframes glowing {
+                  0% {
+                        background-position: 0 0;
+                  }
+
+                  50% {
+                        background-position: 400% 0;
+                  }
+
+                  100% {
+                        background-position: 0 0;
+                  }
+            }

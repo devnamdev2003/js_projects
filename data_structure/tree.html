@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tree</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+    <style>
+        .material-icons.md-36 {
+            font-size: 96px;
+            display: block;
+        }
+
+        .input_block {
+            margin-top: 0px;
+            padding-top: 6px;
+            width: 200px;
+            height: 30px;
+            font-weight: 700;
+            font-size: large;
+            text-align: center;
+            border-radius: 23px;
+            border-bottom: 10px ridge aqua;
+            border-left: none;
+            border-right: none;
+            border-top: none;
+            background-color: rgb(185, 236, 204);
+        }
+
+        .canvas {
+            width: 350px;
+            height: 275px;
+            margin: auto;
+            text-align: center;
+        }
+
+        .alert {
+            font-size: 16px;
+            font-weight: 700;
+            margin-top: 15px;
+        }
+
+        .tree_body {
+            border: 12px groove rgb(6, 153, 6);
+            width: 366.8px;
+            margin: auto;
+            height: 580px;
+            padding: 10px;
+            padding-top: 25px;
+            background-color: rgb(185, 236, 204);
+            text-align: center;
+            overflow: auto;
+            word-wrap: break-word;
+        }
+
+        h1 {
+            border-bottom: 10px groove rgb(9, 255, 0);
+            width: 150px;
+            margin-top: 0px;
+            margin: auto;
+            text-align: center;
+            border-radius: 23px;
+        }
+
+        h2 {
+            margin-top: 11px;
+            margin-bottom: 0px;
+        }
+
+        .bt {
+            width: 93.59px;
+            height: 40px;
+            border-radius: 100px;
+            font-size: 16px;
+            font-weight: 700;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="tree_body">
+        <div class="canvas">
+            <h1>Tree</h1>
+            <br>
+            <h2 id="element_text">Enter Your Root Element</h2>
+            <p><input type="text" class="input_block" id="element" value="" placeholder="Enter">
+            </p>
+            <canvas id="myCanvas" width="350" height="275">
+                Your browser does not support the HTML canvas tag.</canvas>
+            <br>
+            <br>
+            <button class="bt " onclick="tree_insert()">Insert</button>
+            <button class="bt " onclick="Display()">Display</button>
+            <p class="alert" id="alertbox"></p>
+        </div>
+    </div>
+
+    <script>
+        let i = 0;
+        let array = ["", "", "", "", "", "", ""];
+        var c = document.getElementById("myCanvas");
+        var ctx = c.getContext("2d");
+        ctx.lineWidth = 2;
+        ctx.font = "20px  bold";
+        // ctx.strokeStyle = 'red';
+        function tree_insert() {
+
+            let x = element.value;
+            var len = x.length;
+            len = (len * 10) + 10;
+            var a;
+            if (element.value == 0) {
+                document.getElementById("alertbox").innerHTML = "Please Enter Element";
+                element.value = "";
+            }
+            else if (i == 0) {
+                a = (350 - len) / 2;
+
+                document.getElementById("element_text").innerHTML = "Enter Your Left Element";
+                ctx.fillText(x, a + 5, 20);
+                ctx.rect(a, 0, len, 25);
+                array[3] = element.value;
+                element.value = "";
+                i++;
+            }
+            else if (i == 1) {
+                a = (175 - len) / 2;
+                document.getElementById("element_text").innerHTML = "Enter Your Right Element";
+                ctx.fillText(x, a + 5, 145);
+                ctx.rect(a, 125, len, 25);
+                ctx.moveTo(175, 25);
+                ctx.lineTo(87.5, 125);
+                array[1] = element.value;
+                element.value = "";
+                i++;
+            } else if (i == 2) {
+                a = ((175 - len) / 2) + 175;
+                document.getElementById("element_text").innerHTML = "Enter Your Left Element";
+                ctx.fillText(x, a + 5, 145);
+                ctx.rect(a, 125, len, 25);
+                ctx.moveTo(175, 25);
+                ctx.lineTo(262.5, 125);
+                array[5] = element.value;
+                element.value = "";
+                i++;
+            } else if (i == 3) {
+                a = (87.5 - len) / 2;
+                document.getElementById("element_text").innerHTML = "Enter Your Right Element";
+                ctx.fillText(x, a + 5, 270);
+                ctx.rect(a, 250, len, 25);
+                ctx.moveTo(87.5, 150);
+                ctx.lineTo(43.75, 250);
+                array[0] = element.value;
+                element.value = "";
+                i++;
+            } else if (i == 4) {
+                a = ((87.5 - len) / 2) + 87.5;
+                document.getElementById("element_text").innerHTML = "Enter Your Left Element";
+                ctx.fillText(x, a + 5, 270);
+                ctx.rect(a, 250, len, 25);
+                ctx.moveTo(87.5, 150);
+                ctx.lineTo(131.25, 250);
+                array[2] = element.value;
+                element.value = "";
+                i++;
+            } else if (i == 5) {
+                a = ((87.5 - len) / 2) + 175;
+                document.getElementById("element_text").innerHTML = "Enter Your Right Element";
+                ctx.fillText(x, a + 5, 270);
+                ctx.rect(a, 250, len, 25);
+                ctx.moveTo(262.5, 150);
+                ctx.lineTo(218.75, 250);
+                array[4] = element.value;
+                element.value = "";
+                i++;
+            } else if (i == 6) {
+                a = ((87.5 - len) / 2) + 262.5;
+                document.getElementById("element_text").innerHTML = "Tree is Full";
+                ctx.fillText(x, a + 5, 270);
+                ctx.rect(a, 250, len, 25);
+                ctx.moveTo(262.5, 150);
+                array[6] = element.value;
+                ctx.lineTo(306.25, 250);
+                element.value = "";
+                i++;
+            }
+            else if (i == 7) {
+                document.getElementById("alertbox").innerHTML = "Overflow";
+            }
+            ctx.stroke();
+        }
+        function Display() {
+            if (i == 0) {
+                document.getElementById("alertbox").innerHTML = "Tree is Empty";
+            }
+            else {
+                document.getElementById("alertbox").innerHTML = "Tree Element in Inorder Form <br> " + array[0] + "  " + array[1] + "  " + array[2] + "  " + array[3] + "  " + array[4] + " " + array[5] + "  " + array[6];
+            }
+        }
+        /* function tree_delete() {
+            let x = element.value;
+            var len;
+            var a;
+            if (x == array[3] && array[3] != "") {
+                x = array[5];
+                len = x.length;
+                len = (len * 10) + 10;
+                a = (350 - len) / 2;
+                document.getElementById("element_text").innerHTML = x + "Enter Your Left Element";
+                ctx.fillText(x, a + 5, 20);
+                ctx.rect(a, 0, len, 25);
+                array[3] = element.value;
+                // element.value = "";
+                i++;
+            }
+            else if (x == array[1] && array[1] != "") {
+                a = (175 - len) / 2;
+                document.getElementById("element_text").innerHTML = "Enter Your Right Element";
+                ctx.fillText(x, a + 5, 145);
+                ctx.rect(a, 125, len, 25);
+                ctx.moveTo(175, 25);
+                ctx.lineTo(87.5, 125);
+                array[1] = element.value;
+                //element.value = "";
+                i++;
+            } else if (x == array[5] && array[5] != "") {
+                a = ((175 - len) / 2) + 175;
+                document.getElementById("element_text").innerHTML = "Enter Your Left Element";
+                ctx.fillText(x, a + 5, 145);
+                ctx.rect(a, 125, len, 25);
+                ctx.moveTo(175, 25);
+                ctx.lineTo(262.5, 125);
+                array[5] = element.value;
+                //  element.value = "";
+                i++;
+            } else if (x == array[0] && array[0] != "") {
+                a = (87.5 - len) / 2;
+                document.getElementById("element_text").innerHTML = "Enter Your Right Element";
+                ctx.fillText(x, a + 5, 270);
+                ctx.rect(a, 250, len, 25);
+                ctx.moveTo(87.5, 150);
+                ctx.lineTo(43.75, 250);
+                array[0] = element.value;
+                //  element.value = "";
+                i++;
+            } else if (x == array[2] && array[2] != "") {
+                a = ((87.5 - len) / 2) + 87.5;
+                document.getElementById("element_text").innerHTML = "Enter Your Left Element";
+                ctx.fillText(x, a + 5, 270);
+                ctx.rect(a, 250, len, 25);
+                ctx.moveTo(87.5, 150);
+                ctx.lineTo(131.25, 250);
+                array[2] = element.value;
+                //  element.value = "";
+                i++;
+            } else if (x == array[4] && array[4] != "") {
+                a = ((87.5 - len) / 2) + 175;
+                document.getElementById("element_text").innerHTML = "Enter Your Right Element";
+                ctx.fillText(x, a + 5, 270);
+                ctx.rect(a, 250, len, 25);
+                ctx.moveTo(262.5, 150);
+                ctx.lineTo(218.75, 250);
+                array[4] = element.value;
+                //  element.value = "";
+                i++;
+            } else if (x == array[6] && array[6] != "") {
+                a = ((87.5 - len) / 2) + 262.5;
+                document.getElementById("element_text").innerHTML = "Tree is Full";
+                ctx.fillText(x, a + 5, 270);
+                ctx.rect(a, 250, len, 25);
+                ctx.moveTo(262.5, 150);
+                array[6] = element.value;
+                ctx.lineTo(306.25, 250);
+                element.value = "";
+                i++;
+            }
+            else if (i == 0) {
+                document.getElementById("alertbox").innerHTML = "Tree is Empty";
+            }
+            ctx.stroke();
+        } */
+    </script>
+
+</body>
+
+</html>
