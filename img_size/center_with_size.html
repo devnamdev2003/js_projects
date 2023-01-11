@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+
+<body onload="size('outer','inner', 500)">
+
+    <div id="outer">
+        <img src="img/14.png" alt="" id="inner">
+    </div>
+    <script>
+        function size(outer_box_id, inner_box_id, width) {
+            let inner = document.getElementById(inner_box_id);
+            let outer = document.getElementById(outer_box_id);
+            outer.style.position = 'relative';
+            inner.style.position = 'absolute';
+            inner.style.width = width + 'px';
+            inner.style.left = ((outer.offsetWidth - inner.offsetWidth) / 2) + "px";
+        }
+    </script>
+</body>
+
+</html>

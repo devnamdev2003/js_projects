@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Document</title>
+      <style>
+            #outer {
+                  background-image: url('img/14.png');
+            }
+      </style>
+</head>
+
+<body onload="size(1920,1017,'outer')">
+      <div id="outer"></div>
+      <script>
+            function size(i_w, i_h, i_id) {
+                  let img = document.getElementById(i_id);
+                  let img_height = window.innerWidth * (i_h / i_w);
+                  console.log(img_height)
+                  img.style.height = img_height + 'px';
+                  img.style.backgroundSize = '100% 100%';
+            }
+      </script>
+</body>
+
+</html>
